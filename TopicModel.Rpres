@@ -1,0 +1,68 @@
+Topic Modeling of Low Starred Reviews about Restaurants
+========================================================
+author: Yang Yuzhong
+date: 11/10/2015
+
+Introduction
+========================================================
+
+From exploring the Yelp Dataset provided by the Coursera Data Science
+Specialization Capston Project, I seek to perform Topic Modelling using Latent 
+Dirichlet Allocation (LDA) algorithm to answer the question on the Top 10 
+related topics that reviewers have to say when giving restaurants negative 
+reviews.
+
+Preprocessing the dataset
+========================================================
+
+The relevant dataset containing customer reviews and businesses was imported and
+cleaned to produce a corpus of 183176 relevant reviews and 90 relevant word 
+terms. This is illustrated by the wordcloud of the corpus.
+
+<div style="text-align:center" markdown="1">
+![wordcloud](wordcloud.png)
+
+LDA Model of the Dataset
+========================================================
+
+As we do not know the number of topics to model the dataset on, we measured the 
+statistical significance of each generated LDA model for 5-20 
+topics and chose the 20 topic LDA model which was the best fit.
+
+<div style="text-align:center; height:450px" markdown="1">
+![lda plot](LDA_plot.png)
+
+Results from LDA model
+========================================================
+
+With the best fit 20-topic LDA model chosen, the top 10 topics were extracted
+and 5 terms with highest probability of appearance were extracted and displayed.
+
+<div style="text-align:center" markdown="1">
+![topics](topics.png)
+
+Inference of the Topics
+========================================================
+
+Based on the top 10 topics of 1-2 star reviews tend to be given to restaurants, we 
+could infer the following customer behaviour that results in low star reviews:
+
+<small>1. Went to the restaurant at night</small><br/>
+<small>2. Long waiting time</small><br/>
+<small>3. Accompanied by friends</small><br/>
+<small>4. Had orders taken back to the kitchen</small><br/>
+<small>5. Ate at the restaurant</small><br/>
+<small>6. Had interactions with the service staff</small><br/>
+<small>7. Enjoyed great service and food (probably hard to please)</small><br/>
+<small>8. Tend to have fried chicken</small><br/>
+<small>9. Pricing of the restaurant menu</small><br/>
+<small>10. Not a returning customer</small>
+
+Further exploration of the Topics
+========================================================
+
+The visualization of the 20-topic LDA model can be accessed from 
+[link](http://bl.ocks.org/crusainte/raw/8c348220ad876284d667/#topic=0&lambda=1&term=).
+
+<div style="text-align:center; height:550px" markdown="1">
+![ldavis](ldavis.png)
